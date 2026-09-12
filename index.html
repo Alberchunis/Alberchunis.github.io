@@ -1,0 +1,163 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alberchunis | Write-ups</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid #30363d;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #58a6ff;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            font-size: 18px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: #f0f6fc;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .writeups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 25px;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            color: #58a6ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #8b949e;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+            color: #58a6ff;
+            text-decoration: none;
+            border: 1px solid #30363d;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        .card a:hover {
+            background: #21262d;
+            border-color: #58a6ff;
+        }
+
+        footer {
+            border-top: 1px solid #30363d;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+            color: #8b949e;
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Alberchunis</h1>
+        <p>Cybersecurity · Pentesting · Red Team · Write-ups</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">Write-ups</h2>
+
+        <div class="writeups">
+
+            <div class="card">
+                <h3>HexGuns</h3>
+                <p>
+                    Write-up de la máquina HexGuns de The Hackers Labs.
+                </p>
+                <a href="/hexguns/">Ver write-up →</a>
+            </div>
+
+            <div class="card">
+                <h3>Patata Mágica</h3>
+                <p>
+                    Write-up de la máquina Patata Mágica de The Hackers Labs.
+                </p>
+                <a href="/patata-magica/">Ver write-up →</a>
+            </div>
+
+            <div class="card">
+                <h3>Folclore</h3>
+                <p>
+                    Write-up de la máquina Folclore de The Hackers Labs.
+                </p>
+                <a href="/folclore/">Ver write-up →</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            © 2026 Alberchunis ·
+            <a href="https://github.com/Alberchunis">
+                GitHub
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
+```
