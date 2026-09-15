@@ -1,1 +1,12 @@
-
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Microchof</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Microchof</h1><br/><p><img src="images/186-1.png" alt="images/186-1.png" /></p><p><img src="images/186-2.png" alt="images/186-2.png" />   </p><p></p><p>Escaneo para sacar IP</p><p></p><p><strong><code>nmap -sn 192.168.56.0/24</code></strong></p><p></p><p></p><p><img src="images/186-3.png" alt="images/186-3.png" /></p><p></p><p>probamos el smb con anónimo</p><p></p><p><strong><code>smbclient -L //192.168.56.108/ -N</code></strong></p><p></p><p><img src="images/186-4.png" alt="images/186-4.png" /></p><p></p><p><img src="images/186-5.png" alt="images/186-5.png" /></p><p></p><p>Obtenemos info</p><p></p><p><strong><code>enum4linux -t 192.168.56.108</code></strong></p><p></p><p></p><p><img src="images/186-6.png" alt="images/186-6.png" />´</p><p></p><p></p><p></p><p>Buscamos vulnerabilidades</p><p></p><p><strong><code> nmap -p- --script=vuln 192.168.56.108</code></strong></p><p>    </p><p>    <img src="images/186-7.png" alt="images/186-7.png" /></p><p>    </p><p>    Ejecutamos escaneo <strong><code>smb eternalblue</code></strong></p><p>    </p><p>    <img src="images/186-8.png" alt="images/186-8.png" /></p><p>    </p><p>    Ejecutamos escaneo eternalblue de nmap, confirmamos</p><p>    </p><p><strong><code>nmap --script vuln -p 445 -oN blue_smb.txt 192.168.56.108</code></strong></p><p>    </p><p>    <img src="images/186-9.png" alt="images/186-9.png" /></p><p>    </p><p>   </p><p>    Es importante elegir el <strong><code>payload x64</code></strong></p><p>    <img src="images/186-10.png" alt="images/186-10.png" /></p><p>    </p><p>    Ya tenemos <strong><code>permisos system</code></strong></p><p>    </p><p>    <img src="images/186-11.png" alt="images/186-11.png" /></p><p>    </p><p>    <img src="images/186-12.png" alt="images/186-12.png" /></p><p>    </p><p>    <img src="images/186-13.png" alt="images/186-13.png" /></p><p>    </p><p>    </p><p>    Obtenemos <strong><code>flag de User</code></strong></p><p>    <img src="images/186-14.png" alt="images/186-14.png" /></p><p>    </p><p>    Obtenemos <strong><code>flag de Root</code></strong></p><p>    </p><p>    <img src="images/186-15.png" alt="images/186-15.png" /></p><p>    </p><p>    </p></div>
+</body>
+</html>
